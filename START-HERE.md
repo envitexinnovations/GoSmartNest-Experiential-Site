@@ -1,33 +1,29 @@
-# GoSmartNest — complete website source
+# GoSmartNest — Vercel version
 
-Includes the latest published website, including the curtain bar update, all room scenes, interactions, logo, textures and wildlife video.
+This package uses standard Next.js. All website source, images, textures, video and interaction code are preserved. Sites/Vinext/Cloudflare build scaffolding has been removed.
 
-## Run locally
+## Upload and deploy
+1. Replace the old repository contents with this folder's contents. Do not nest this folder inside the repository. Remove the old vite.config.ts, scripts, build, vendor, openai/.openai, db, drizzle, examples and cloudflare-env.d.ts files if they remain from an earlier upload.
+2. Ensure package.json, package-lock.json, vercel.json, next.config.ts, app, components and public are at the repository root.
+3. In Vercel choose Next.js, Node.js 24.x, and the root containing package.json. Clear stale command overrides. The included vercel.json sets npm ci, npm run build and .next output.
+4. Redeploy. No application environment variables are required for this landing page.
 
-Install Node.js 22.13 or newer, then open a terminal in this folder and run:
+## Local commands
+Use Node.js 24.x.
 
 ```sh
 npm ci
 npm run dev
 ```
 
-Open http://localhost:5173 in your browser.
-
-## Check and build
+Open http://localhost:5173.
 
 ```sh
 npm run lint
-npx tsc --noEmit
 npm run build
+npm start
 ```
 
-## Main files
+Production preview runs at http://localhost:3000.
 
-- app/page.tsx: landing page and branding
-- app/globals.css: styling and animations
-- components/tour/: room scenes and interactive controls
-- data/: tour content and configuration
-- public/: all images, textures, logo and video
-- public/tour/credits.txt: media credits
-
-Dependencies and generated build caches are excluded; npm ci installs dependencies from the included lockfile. The project uses React, TypeScript and Vinext/Vite with Sites hosting configuration. Keep the included hidden configuration files when copying the project.
+The build now produces .next/routes-manifest.json. Do not create that file manually or commit generated .next files. Media credits are in public/tour/credits.txt. Appliance controls are illustrative browser interactions.
