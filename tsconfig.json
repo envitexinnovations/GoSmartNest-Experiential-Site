@@ -28,34 +28,21 @@
       ]
     },
     "types": [
-      "node"
+      "node",
+      "@cloudflare/workers-types"
     ],
     "allowImportingTsExtensions": true
   },
   "include": [
     "next-env.d.ts",
-    "app/**/*.ts",
-    "app/**/*.tsx",
-    "components/**/*.ts",
-    "components/**/*.tsx",
-    "hooks/**/*.ts",
-    "hooks/**/*.tsx",
-    "lib/**/*.ts",
-    "lib/**/*.tsx",
-    "data/**/*.ts",
-    "data/**/*.tsx",
-    "next.config.ts",
+    "**/*.ts",
+    "**/*.tsx",
     ".next/types/**/*.ts",
-    ".next/dev/types/**/*.ts"
+    ".next/dev/types/**/*.ts",
+    "**/*.mts"
   ],
   "exclude": [
     "node_modules",
-    "build",
-    "db",
-    "drizzle",
-    "examples",
-    "vendor",
-    "vite.config.ts",
-    "drizzle.config.ts"
+    "examples"
   ]
 }
